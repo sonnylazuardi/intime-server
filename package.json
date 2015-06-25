@@ -1,0 +1,28 @@
+{
+  "name": "intime-server",
+  "version": "1.0.0",
+  "description": "server stack for busintime",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://sonnylazuardi@github.com/sonnylazuardi/intime-server"
+  },
+  "keywords": [
+    "intime",
+    "busintime"
+  ],
+  "author": "sonnylazuardi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sonnylazuardi/intime-server/issues"
+  },
+  "homepage": "https://github.com/sonnylazuardi/intime-server",
+  "dependencies": {
+    "express": "^4.13.0",
+    "mysql": "^2.7.0",
+    "sequelize": "^3.3.1"
+  }
+}
