@@ -1,24 +1,13 @@
-var options = {
-  host: 'busintime.id',
-  port: 28015
-};
+var express = require('express');
+var bodyParser = require('body-parser');
+var routes = require('./src/config/routes');
 
-var thinky = require('thinky')(options);
-var type = thinky.type;
+var app = express();
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: false}));
 
-// Create a model - the table is automatically created
-var Post = thinky.createModel("Post", {
-    id: type.string(),
-    title: type.string(),
-    content: type.string(),
-    idAuthor: type.string(),
-    date: type.string()
-}); 
+routes(app);
 
-var Author = thinky.createModel("Author", {
-    id: type.string(),
-    name: type.string()
+var server = app.listen(5000, function() {
+    console.log('magic on 5000');
 });
-
-// Join the models
-Post.belongsTo(Author, "author", "idAuthor", "id");
